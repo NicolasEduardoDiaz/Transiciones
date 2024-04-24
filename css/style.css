@@ -1,5 +1,5 @@
 body {
-    background-image: url('../storage/img/paisaje.png'); 
+    background-image: url('storage/img/paisaje.png'); 
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
