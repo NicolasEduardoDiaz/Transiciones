@@ -1,70 +1,61 @@
 body {
+    background-image: url('../storage/img/paisaje.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.escenario {
-    position: relative;
-    width: 100%;
     height: 100vh;
-    background-image: url('casa-y-arbol.jpg'); /* Agrega la imagen de fondo de la casa y el árbol */
-    background-size: cover;
+    display: flex;
+    justify-content: flex-end;  /* Alinea a la derecha */
 }
 
-.casa {
-    /* Estilos para la casa */
-    position: absolute;
-    /* Agrega las propiedades necesarias para posicionar la casa en el fondo */
+.sun {
+    height: 100vh; 
 }
 
-.arbol {
-    /* Estilos para el árbol */
-    position: absolute;
-    /* Agrega las propiedades necesarias para posicionar el árbol en el fondo */
+.sun img {
+    width: auto; 
+    height: 100px;
 }
 
-.mensaje {
-    /* Estilos para el mensaje */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    color: white;
-}
-
-.nube {
-    /* Estilos para la nube */
-    position: absolute;
-    top: 20%;
-    right: 0;
-    /* Agrega las propiedades necesarias para posicionar la nube en la parte derecha del escenario */
-}
-
-.sol {
-    /* Estilos para el sol */
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    /* Agrega las propiedades necesarias para posicionar el sol en el escenario */
-}
-
-.lluvia {
-    /* Estilos para la lluvia */
-    position: absolute;
+.cloud {  
+    position: absolute;  /* Permite que este contenedor esté encima del inferior */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('gota-de-lluvia.png'); /* Agrega la imagen de la gota de lluvia */
-    /* Oculta la lluvia inicialmente */
-    display: none;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
 }
 
-.flor {
-    /* Estilos para la flor */
-    position: absolute;
-    /* Agrega las propiedades necesarias para posicionar la flor en el escenario */
-    display: none; /* Oculta la flor inicialmente */
+.cloud img {
+    height: 110px;
+    transform: translateX(100%);  /* Inicia desde la derecha */
+    animation: mover-derecha-izquierda 3s linear 1;  /* Animación para mover de derecha a izquierda */
+}
+
+@keyframes mover-derecha-izquierda {
+    0% {
+        transform: translateX(300%);  /* Comienza desde el extremo derecho */
+    }
+    100% {
+        transform: translateX(45px);  /* Termina en el extremo izquierdo */
+    }
+}
+
+.rain{
+    position: absolute;  /* Permite el posicionamiento preciso */
+    bottom: 15;  /* Alinea al borde inferior */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: flex-end;
+}
+
+.rain img{
+    width: 220px;  /* Tamaño de la imagen debajo de la nube */
+    height: 200;
 }
